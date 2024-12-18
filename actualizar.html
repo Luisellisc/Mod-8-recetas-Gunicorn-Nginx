@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Receta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Actualizar Receta</h1>
+
+    <form action="{{ url_for('actualizar_receta', id=receta.id) }}" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" value="{{ receta.nombre }}"><br><br>
+
+        <label for="ingredientes">Ingredientes:</label><br>
+        <textarea id="ingredientes" name="ingredientes">{{ receta.ingredientes }}</textarea><br><br>
+
+        <label for="pasos">Pasos:</label><br>
+        <textarea id="pasos" name="pasos">{{ receta.pasos }}</textarea><br><br>
+
+        <button type="submit">Actualizar Receta</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">Volver al inicio</a>
+</body>
+</html>
